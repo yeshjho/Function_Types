@@ -25,6 +25,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  ***********************************************************************************/
+#pragma once
 #include <tuple>
 
 
@@ -40,6 +41,7 @@ struct FunctionTypes<ReturnType_ (Class_::*) (Parameters_...)>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = false;
@@ -53,6 +55,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = false;
@@ -66,6 +69,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = false;
@@ -79,6 +83,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = false;
@@ -92,6 +97,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) &>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = true;
@@ -105,6 +111,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) &&>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = false;
@@ -118,6 +125,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const &>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = true;
@@ -131,6 +139,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const &&>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = false;
@@ -144,6 +153,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile &>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = true;
@@ -157,6 +167,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile &&>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = false;
@@ -170,6 +181,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile &>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = true;
@@ -183,6 +195,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile &&>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = false;
@@ -196,6 +209,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) noexcept>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = false;
@@ -209,6 +223,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const noexcept>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = false;
@@ -222,6 +237,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile noexcept>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = false;
@@ -235,6 +251,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile noex
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = false;
@@ -248,6 +265,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) & noexcept>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = true;
@@ -261,6 +279,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) && noexcept>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = false;
@@ -274,6 +293,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const & noexcept>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = true;
@@ -287,6 +307,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const && noexcept>
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = false;
 	static constexpr bool isLRef = false;
@@ -300,6 +321,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile & noexcept
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = true;
@@ -313,6 +335,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile && noexcep
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = false;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = false;
@@ -326,6 +349,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile & no
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = true;
@@ -339,6 +363,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile && n
 	using ReturnType = ReturnType_;
 	using Class = Class_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isConst = true;
 	static constexpr bool isVolatile = true;
 	static constexpr bool isLRef = false;
@@ -352,6 +377,7 @@ struct FunctionTypes<ReturnType_(*) (Parameters_...)>
 {
 	using ReturnType = ReturnType_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isNoExcept = false;
 };
 
@@ -360,6 +386,7 @@ struct FunctionTypes<ReturnType_ (*) (Parameters_...) noexcept>
 {
 	using ReturnType = ReturnType_;
 	using Parameters = std::tuple<Parameters_...>;
+	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isNoExcept = true;
 };
 }
