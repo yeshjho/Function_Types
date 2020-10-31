@@ -1,6 +1,6 @@
 /***********************************************************************************
  * Function_Types
- * https://github.com/yeshjho/Cpp_Python_Embedder
+ * https://github.com/yeshjho/Function_Types
  *
  *
  * MIT License
