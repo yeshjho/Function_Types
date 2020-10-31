@@ -47,6 +47,7 @@ struct FunctionTypes<ReturnType_ (Class_::*) (Parameters_...)>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -61,6 +62,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -75,6 +77,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -89,6 +92,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -103,6 +107,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) &>
 	static constexpr bool isLRef = true;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -117,6 +122,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) &&>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = true;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -131,6 +137,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const &>
 	static constexpr bool isLRef = true;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -145,6 +152,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const &&>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = true;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -159,6 +167,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile &>
 	static constexpr bool isLRef = true;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -173,6 +182,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile &&>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = true;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -187,6 +197,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile &>
 	static constexpr bool isLRef = true;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -201,6 +212,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile &&>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = true;
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -215,6 +227,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) noexcept>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -229,6 +242,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const noexcept>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -243,6 +257,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile noexcept>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -257,6 +272,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile noex
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -271,6 +287,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) & noexcept>
 	static constexpr bool isLRef = true;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -285,6 +302,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) && noexcept>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = true;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -299,6 +317,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const & noexcept>
 	static constexpr bool isLRef = true;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -313,6 +332,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const && noexcept>
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = true;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -327,6 +347,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile & noexcept
 	static constexpr bool isLRef = true;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -341,6 +362,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) volatile && noexcep
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = true;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -355,6 +377,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile & no
 	static constexpr bool isLRef = true;
 	static constexpr bool isRRef = false;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 template<typename ReturnType_, typename Class_, typename ...Parameters_>
@@ -369,6 +392,7 @@ struct FunctionTypes<ReturnType_(Class_::*) (Parameters_...) const volatile && n
 	static constexpr bool isLRef = false;
 	static constexpr bool isRRef = true;
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = true;
 };
 
 
@@ -379,6 +403,7 @@ struct FunctionTypes<ReturnType_(*) (Parameters_...)>
 	using Parameters = std::tuple<Parameters_...>;
 	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isNoExcept = false;
+	static constexpr bool isMemberFunction = false;
 };
 
 template<typename ReturnType_, typename ...Parameters_>
@@ -388,5 +413,6 @@ struct FunctionTypes<ReturnType_ (*) (Parameters_...) noexcept>
 	using Parameters = std::tuple<Parameters_...>;
 	static constexpr size_t parameterCount = sizeof...(Parameters_);
 	static constexpr bool isNoExcept = true;
+	static constexpr bool isMemberFunction = false;
 };
 }
