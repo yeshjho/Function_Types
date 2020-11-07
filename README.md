@@ -1,6 +1,6 @@
 # Function_Types
 
-A lightweight header-only library for investigating functions' properties.
+A lightweight C++17 header-only library for investigating functions' properties.
 
 ## Supported Functions
 - Global functions (including Static functions)
