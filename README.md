@@ -34,34 +34,34 @@ A lightweight C++17 header-only library for investigating functions' properties.
 class C
 {
 public:
-	[[nodiscard]] C* mem(const int&, int&, int&&, const int(&)[10], int) const && noexcept;
+    [[nodiscard]] C* mem(const int&, int&, int&&, const int(&)[10], int) const && noexcept;
 };
 
 
 int main()
 {
-	using namespace function_types;
+    using namespace function_types;
 
-	using MemberFunctionPtrType = decltype(&C::mem);
+    using MemberFunctionPtrType = decltype(&C::mem);
 
-	using MemberFunctionProperties = FunctionTypes<MemberFunctionPtrType>;
-	
-	static_assert(MemberFunctionProperties::isMemberFunction);
-	static_assert(MemberFunctionProperties::isConst);
-	static_assert(!MemberFunctionProperties::isVolatile);
-	static_assert(!MemberFunctionProperties::isLRef);
-	static_assert(MemberFunctionProperties::isRRef);
-	static_assert(MemberFunctionProperties::isNoExcept);
-	
-	static_assert(std::is_same_v<MemberFunctionProperties::Class, C>);
-	static_assert(std::is_same_v<MemberFunctionProperties::ReturnType, C*>);
+    using MemberFunctionProperties = FunctionTypes<MemberFunctionPtrType>;
+    
+    static_assert(MemberFunctionProperties::isMemberFunction);
+    static_assert(MemberFunctionProperties::isConst);
+    static_assert(!MemberFunctionProperties::isVolatile);
+    static_assert(!MemberFunctionProperties::isLRef);
+    static_assert(MemberFunctionProperties::isRRef);
+    static_assert(MemberFunctionProperties::isNoExcept);
+    
+    static_assert(std::is_same_v<MemberFunctionProperties::Class, C>);
+    static_assert(std::is_same_v<MemberFunctionProperties::ReturnType, C*>);
 
-	using MemberParameters = MemberFunctionProperties::Parameters;
-	static_assert(std::tuple_size_v<MemberParameters> == MemberFunctionProperties::parameterCount);
-	static_assert(std::is_same_v<std::tuple_element_t<0, MemberParameters>, const int&>);
-	static_assert(std::is_same_v<std::tuple_element_t<1, MemberParameters>, int&>);
-	static_assert(std::is_same_v<std::tuple_element_t<2, MemberParameters>, int&&>);
-	static_assert(std::is_same_v<std::tuple_element_t<3, MemberParameters>, const int(&)[10]>);
-	static_assert(std::is_same_v<std::tuple_element_t<4, MemberParameters>, int>);
+    using MemberParameters = MemberFunctionProperties::Parameters;
+    static_assert(std::tuple_size_v<MemberParameters> == MemberFunctionProperties::parameterCount);
+    static_assert(std::is_same_v<std::tuple_element_t<0, MemberParameters>, const int&>);
+    static_assert(std::is_same_v<std::tuple_element_t<1, MemberParameters>, int&>);
+    static_assert(std::is_same_v<std::tuple_element_t<2, MemberParameters>, int&&>);
+    static_assert(std::is_same_v<std::tuple_element_t<3, MemberParameters>, const int(&)[10]>);
+    static_assert(std::is_same_v<std::tuple_element_t<4, MemberParameters>, int>);
 }
 ```
