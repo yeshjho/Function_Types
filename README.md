@@ -15,7 +15,7 @@ A lightweight C++17 header-only library for investigating functions' properties.
 - Whether is `noexcept`
 
 ### Investigable Properties only for Member functions
-- Class it's belong to
+- Class it belongs to
 - Whether is `const`
 - Whether is `volatile`
 - Whether is l-value reference qualified (i.e. `&`)
